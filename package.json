@@ -1,12 +1,15 @@
 {
-  "name": "@fx/react",
-  "version": "2.0.0",
-  "private": true,
+  "name": "@water102/fx-react",
+  "version": "2.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "directories": {
     "src": "src",
     "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/water102/fx-react.git"
   },
   "scripts": {
     "build": "tsc --build",
@@ -14,8 +17,8 @@
     "lint": "eslint \"src/**/*.ts\" --fix"
   },
   "dependencies": {
-    "@fx/common": "^2.0.0",
-    "@fx/web": "^2.0.0",
+    "@water102/fx-common": "^2.0.1",
+    "@water102/fx-web": "^2.0.1",
     "ramda": "^0.29.0"
   },
   "devDependencies": {

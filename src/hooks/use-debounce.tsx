@@ -1,5 +1,5 @@
 import { DependencyList, useMemo } from "react";
-import { debounce } from "@fx/common";
+import { debounce } from '@water102/fx-common';
 
 export function useDebounce<Args extends unknown[]>(
   cb: (...args: Args) => void,

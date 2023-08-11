@@ -1,6 +1,5 @@
-declare const _default: "@fx/react";
-export default _default;
 export * from './event-emitter';
-export * from './default-fc-props';
 export * from './hooks';
+export * from './default-fc-props';
+export * from './lazy-load-then-create-element';
 //# sourceMappingURL=index.d.ts.map

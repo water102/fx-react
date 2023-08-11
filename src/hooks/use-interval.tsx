@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { AnyFunction } from '@fx/common';
+import { AnyFunction } from '@water102/fx-common';
 
 export const useInterval = (func: AnyFunction, interval: number, ...deps: any[]) => {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useRef } from 'react';
-import { AnyFunction } from '@fx/common';
+import { AnyFunction } from '@water102/fx-common';
 import { DefaultFcProps } from '../default-fc-props';
 
 interface IEmitterContext {
