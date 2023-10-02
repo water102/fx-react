@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@water102/fx-react/*": [
+        "./*"
+      ],
+    }
+  }
+}

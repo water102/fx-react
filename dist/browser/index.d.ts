@@ -6,3 +6,4 @@ export * from './lazy-load-then-create-element';
 export * from './render-route';
 export * from './with-browser-router';
 export * from './with-suspense';
+//# sourceMappingURL=index.d.ts.map

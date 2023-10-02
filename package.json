@@ -1,8 +1,15 @@
 {
   "name": "@water102/fx-react",
-  "version": "2.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "2.0.2",
+  "main": "dist/node/index.js",
+  "browser": {
+    "./dist/node/index.js": "./dist/browser/index.js"
+  },
+  "types": "dist/node/index.d.ts",
+  "files": [
+    "dist/browser",
+    "dist/node"
+  ],
   "directories": {
     "src": "src",
     "test": "__tests__"
@@ -12,21 +19,23 @@
     "url": "https://github.com/water102/fx-react.git"
   },
   "scripts": {
-    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build && tsc -p tsconfig.browser.json",
     "watch": "yarn build --watch",
     "lint": "eslint \"src/**/*.ts\" --fix"
   },
   "dependencies": {
-    "@water102/fx-common": "^2.0.1",
-    "@water102/fx-web": "^2.0.1",
-    "ramda": "^0.29.0"
+    "@water102/fx-common": "^2.0.2",
+    "@water102/fx-web": "^2.0.2",
+    "ramda": "^0.29.0",
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
-    "@types/ramda": "^0.29.3",
+    "@types/ramda": "^0.29.5",
     "@types/react": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "eslint": "^8.38.0",
-    "typescript": "~5.1.6"
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.48.0",
+    "typescript": "^5.2.2"
   }
 }
