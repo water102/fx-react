@@ -10,8 +10,11 @@ interface IEmitterContext {
 
 const createSubscription = (): IEmitterContext => {
   const subscribers = new Set<AnyFunction>();
-  const subscribe = (fn: AnyFunction) => subscribers.add(fn);
   const unsubscribe = (fn: AnyFunction) => subscribers.delete(fn);
+  const subscribe = (fn: AnyFunction) => {
+    subscribers.add(fn)
+    return () => unsubscribe(fn)
+  };
   const emit = (...args: any[]) =>
     subscribers.forEach((c) => c(...args));
   return {
@@ -21,13 +24,15 @@ const createSubscription = (): IEmitterContext => {
   };
 };
 
+export const eventSubscription = createSubscription()
+
 const EmitterContext = React.createContext<IEmitterContext | undefined>(undefined);
 
 export const EmitterProvider = ({
   children
 }: DefaultFcProps) => {
   const subscriptionRef = useRef(
-    createSubscription()
+    eventSubscription
   )
 
   return (
@@ -56,10 +61,10 @@ export const useSubscriber = (
   fn: AnyFunction,
   listenTo?: React.DependencyList | undefined,
 ) => {
-  const { subscribe, unsubscribe } = useEmitterContext();
+  const { subscribe } = useEmitterContext();
 
   useEffect(() => {
-    subscribe(fn);
-    return () => unsubscribe(fn);
-  }, listenTo);
+    const unsubscribe = subscribe(fn);
+    return unsubscribe;
+  }, [fn, ...(listenTo ?? [])]);
 };

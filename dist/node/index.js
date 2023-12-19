@@ -21,4 +21,5 @@ __exportStar(require("./default-fc-props"), exports);
 __exportStar(require("./lazy-load-then-create-element"), exports);
 __exportStar(require("./render-route"), exports);
 __exportStar(require("./with-browser-router"), exports);
+__exportStar(require("./with-react-query"), exports);
 __exportStar(require("./with-suspense"), exports);
