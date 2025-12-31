@@ -1,2 +1,0 @@
-export declare const useEvent: (owner: Window | HTMLElement, eventName: string, listener: (event: any) => void, deps?: React.DependencyList | undefined) => Function | undefined;
-//# sourceMappingURL=use-event.d.ts.map
