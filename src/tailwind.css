@@ -1,0 +1,12 @@
+/* 
+ * This file should be imported AFTER @import "tailwindcss" in your main CSS file.
+ * It only contains @source directives to scan fx-react components.
+ * DO NOT import tailwindcss here to avoid duplicate base styles.
+ */
+
+/* Scan fx-react components for Tailwind classes */
+@source "./components/**/*.ts";
+@source "./components/**/*.tsx";
+@source "./hooks/**/*.ts";
+@source "./hooks/**/*.tsx";
+
