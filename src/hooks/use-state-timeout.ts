@@ -13,7 +13,7 @@ import { useState, useCallback, useRef } from "react";
  */
 export const useStateTimeout = <T>(value: T, timeout: number): [T, (newValue: T) => void, React.Dispatch<React.SetStateAction<T>>] => {
   const [state, setState] = useState<T>(value);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const previousValueRef = useRef<T>(value);
 
   const setStateTimeout = useCallback((newValue: T) => {

@@ -20,7 +20,8 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["node", "jest"]
   },
   "include": [
     "src/**/*"
