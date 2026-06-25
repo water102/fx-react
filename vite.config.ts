@@ -12,13 +12,24 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       tsconfigPath: './tsconfig.json',
+      entryRoot: 'src',
+      outDir: 'dist',
+      rollupTypes: true,
     }),
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: path.resolve(__dirname, 'src/index.ts'),
+        'error-boundary': path.resolve(__dirname, 'src/entries/error-boundary.ts'),
+        hooks: path.resolve(__dirname, 'src/entries/hooks.ts'),
+        i18n: path.resolve(__dirname, 'src/entries/i18n.ts'),
+        'redux-logic': path.resolve(__dirname, 'src/entries/redux-logic.ts'),
+        'with-react-query': path.resolve(__dirname, 'src/entries/with-react-query.ts'),
+        'copy-to-clipboard': path.resolve(__dirname, 'src/entries/copy-to-clipboard.ts'),
+      },
       name: '@water102/fx-react',
-      fileName: () => 'index.js',
+      fileName: (format, entryName) => `${entryName}.js`,
       formats: ['es'],
     },
     rollupOptions: {

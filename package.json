@@ -3,20 +3,58 @@
   "version": "4.0.7",
   "engines": {
     "npm": ">=10.9",
-    "node": ">=23.3"
+    "node": ">=20"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/src/index.d.ts",
-  "typings": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "style": "./dist/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./error-boundary": {
+      "types": "./dist/error-boundary.d.ts",
+      "import": "./dist/error-boundary.js",
+      "default": "./dist/error-boundary.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks.d.ts",
+      "import": "./dist/hooks.js",
+      "default": "./dist/hooks.js"
+    },
+    "./i18n": {
+      "types": "./dist/i18n.d.ts",
+      "import": "./dist/i18n.js",
+      "default": "./dist/i18n.js"
+    },
+    "./redux-logic": {
+      "types": "./dist/redux-logic.d.ts",
+      "import": "./dist/redux-logic.js",
+      "default": "./dist/redux-logic.js"
+    },
+    "./with-react-query": {
+      "types": "./dist/with-react-query.d.ts",
+      "import": "./dist/with-react-query.js",
+      "default": "./dist/with-react-query.js"
+    },
+    "./copy-to-clipboard": {
+      "types": "./dist/copy-to-clipboard.d.ts",
+      "import": "./dist/copy-to-clipboard.js",
+      "default": "./dist/copy-to-clipboard.js"
+    },
+    "./style": "./dist/index.css"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "npx rimraf dist out",
-    "build": "npm run clean && vite build && node scripts/write-index-dts.mjs",
-    "build:prod": "npm run clean && cross-env NODE_ENV=production vite build && node scripts/write-index-dts.mjs",
+    "build": "npm run clean && vite build",
+    "build:prod": "npm run clean && cross-env NODE_ENV=production vite build",
     "prepublishOnly": "npm run build:prod",
     "test": "jest",
     "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
@@ -30,6 +68,7 @@
     "@types/node": "^26.0.1",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "cross-env": "^10.1.0",
     "esbuild": "^0.28.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.4.2",
@@ -56,9 +95,29 @@
     "react-hot-toast": "^2.4.0",
     "react-i18next": "^17.0.7",
     "react-redux": "^9.2.0",
-    "react-router": "^8.0.1",
+    "react-router": "^7.0.0 || ^8.0.0",
     "react-use": "^17.6.1",
     "redux": "^5.0.1",
     "tailwind-merge": "^3.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@reduxjs/toolkit": {
+      "optional": true
+    },
+    "@tanstack/react-query": {
+      "optional": true
+    },
+    "i18next-http-backend": {
+      "optional": true
+    },
+    "react-hot-toast": {
+      "optional": true
+    },
+    "react-redux": {
+      "optional": true
+    },
+    "redux": {
+      "optional": true
+    }
   }
 }

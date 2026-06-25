@@ -4,7 +4,7 @@ export * from './use-countdown';
 export * from './use-debounce';
 export * from './use-event';
 export * from './use-interval';
-export * from './use-query';
+export { useQuery, useUrlQuery } from './use-query';
 export * from './use-scroll-to-top';
 export * from './use-state-timeout';
 export * from './use-throttle';

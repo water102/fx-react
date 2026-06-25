@@ -2,14 +2,18 @@ import React from "react";
 import { useLocation } from "react-use";
 
 /**
- * Hook that provides URL query parameters.
- * @returns URLSearchParams object
+ * URL search params for the current location (not TanStack Query).
  * @example
- * const query = useQuery();
+ * const query = useUrlQuery();
  * const userId = query.get('userId');
  */
-export function useQuery(): URLSearchParams {
+export function useUrlQuery(): URLSearchParams {
   const { search } = useLocation();
 
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
+
+/**
+ * @deprecated Use {@link useUrlQuery} — name clashes with TanStack Query `useQuery`.
+ */
+export const useQuery = useUrlQuery;
