@@ -13,8 +13,8 @@ export default defineConfig({
       insertTypesEntry: true,
       tsconfigPath: './tsconfig.json',
       entryRoot: 'src',
-      outDir: 'dist',
-      rollupTypes: true,
+      outDirs: 'dist',
+      bundleTypes: true,
     }),
   ],
   build: {
