@@ -27,6 +27,7 @@ export default defineConfig({
         'redux-logic': path.resolve(__dirname, 'src/entries/redux-logic.ts'),
         'with-react-query': path.resolve(__dirname, 'src/entries/with-react-query.ts'),
         'copy-to-clipboard': path.resolve(__dirname, 'src/entries/copy-to-clipboard.ts'),
+        utils: path.resolve(__dirname, 'src/entries/utils.ts'),
       },
       name: '@water102/fx-react',
       fileName: (format, entryName) => `${entryName}.js`,

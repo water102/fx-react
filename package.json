@@ -46,6 +46,11 @@
       "import": "./dist/copy-to-clipboard.js",
       "default": "./dist/copy-to-clipboard.js"
     },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.js",
+      "default": "./dist/utils.js"
+    },
     "./style": "./dist/index.css"
   },
   "files": [

@@ -10,3 +10,4 @@ export * from './with-classes';
 export * from './with-hash-router';
 export * from './with-styles';
 export * from './with-suspense';
+export * from './utils';
