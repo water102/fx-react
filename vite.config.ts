@@ -14,7 +14,8 @@ export default defineConfig({
       tsconfigPath: './tsconfig.json',
       entryRoot: 'src',
       outDirs: 'dist',
-      bundleTypes: true,
+      // TS 7 + api-extractor: parseJsonConfigFileContent missing; unbundled .d.ts is enough for apps
+      bundleTypes: false,
     }),
   ],
   build: {
